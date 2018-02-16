@@ -1,0 +1,17 @@
+{
+  "name": "edimax-sunset-switcher",
+  "version": "0.1.0",
+  "description": "Switch your Edimax plug on just before sunset in a given location",
+  "main": "index.js",
+  "dependencies": {
+    "edimax-smartplug": "^0.0.22",
+    "request": "^2.83.0",
+    "sync-request": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tom Barnsbury <ruralmyth@gmail.com>",
+  "license": "ISC"
+}
