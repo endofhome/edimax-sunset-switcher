@@ -1,5 +1,8 @@
 # Edimax Sunset Switcher
 
+Automatically switch on your Edimax socket within 30 minutes of (but not after) sunset, in a given location.
+
+
 ### Prerequisites
 node.js / npm
 
@@ -22,4 +25,4 @@ Environment variables required:
 
 ### How to use
 
-execute `run.sh`
+execute `run.sh`, probably from a cron job or otherwise on a schedule.
