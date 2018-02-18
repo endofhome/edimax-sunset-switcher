@@ -22,4 +22,4 @@ Environment variables required:
 
 ### How to use
 
-`node index.js`
+execute `run.sh`
