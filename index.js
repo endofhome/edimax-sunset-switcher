@@ -14,12 +14,14 @@ const sunsetISO8601 = () => {
 const withinThirtyMinsOfSunset = () => {
     const now = new Date().valueOf();
     const sunset = new Date(sunsetISO8601()).valueOf();
-    return (now >= (sunset - 1800000));
+    return (now >= (sunset - 1800000) && now <= sunset);
 };
 
 edimaxClient.lampIsOn().then(lampIsOn => {
     if (withinThirtyMinsOfSunset() && !lampIsOn) {
         console.log("Switching on!");
         edimaxClient.switchOn();
+    } else {
+        console.log("No need to switch on: it's way before or after sunset, or the lamp is already on.")
     }
 });
