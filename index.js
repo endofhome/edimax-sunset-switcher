@@ -22,6 +22,6 @@ edimaxClient.lampIsOn().then(lampIsOn => {
         console.log("Switching on!");
         edimaxClient.switchOn();
     } else {
-        console.log("No need to switch on: it's way before or after sunset, or the lamp is already on.")
+        console.log("No need to switch on: it's way before or after sunset, or the lamp is already on.");
     }
 });
