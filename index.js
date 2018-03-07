@@ -17,14 +17,27 @@ const withinThirtyMinsOfSunset = () => {
     return (now >= (sunset - 1800000) && now <= sunset);
 };
 
+const generateErrorMessage = (timeToSwitchOn, lampIsOff) => {
+    let errors = [];
+    if (!timeToSwitchOn) {
+        errors.push("it's way before or after sunset")
+    }
+    if (!lampIsOff) {
+        errors.push("lamp is already on")
+    }
+    return `No need to switch on: ${errors.join(" and ")}.`
+};
+
 const main = async () => {
+    const timeToSwitchOn = withinThirtyMinsOfSunset()
     const lampIsOff = await edimaxClient.lampIsOff()
 
-    if (withinThirtyMinsOfSunset() && lampIsOff) {
+    if (timeToSwitchOn && lampIsOff) {
         console.log("Switching on!");
         edimaxClient.switchOn();
-    } else {
-        console.log("No need to switch on: it's way before or after sunset, or the lamp is already on.");
+    } else {        
+        const errorMessage = generateErrorMessage(timeToSwitchOn, lampIsOff)
+        console.log(errorMessage)
     }
 };
 
