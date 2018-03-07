@@ -18,7 +18,7 @@ class EdimaxClient {
         smartplug.setSwitchState(false, this.options).catch(e => { console.log("Request to turn off failed: ", e); });
     }
 
-    async lampIsOff() {
+    async plugIsOff() {
         const currentState = await smartplug.getSwitchState(this.options).catch(e => { console.log("Request to get state of smartplug failed: ", e); });
         return !currentState;
     }
